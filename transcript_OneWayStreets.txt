@@ -1,0 +1,85 @@
+NOTE:  Exits are listed in the status line below the name of the noom.
+
+One-Way Streets
+An Interactive Fiction by Eric Conrad
+Release 1 / Serial number 200908 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD
+
+R0
+You're standing outside a strange and possibly magical round house.
+
+>test me
+(Testing.)
+
+>[1] inside
+
+R2
+You're in what appears to be a circle of rooms but for reasons that aren't clear, you can't get back outside from here, and you are being forced clockwise.
+
+>[2] w
+
+R1
+The circle of rooms continues clockwise and it appears that you can go outside from here.
+
+>[3] outside
+A force field stops you from passing through.  A disembodied voice says "You need the passkey."
+
+>[4] sw
+
+R8
+A strange room -- an arc of about 45 degrees.  The only exit seems to be clockwise.
+
+>[5] s
+
+R7
+A strange room -- an arc of about 45 degrees.  The only exit seems to be clockwise.
+
+You can see a passkey here.
+
+>[6] take passkey
+Taken.
+
+>[7] se
+
+R6
+A strange room -- an arc of about 45 degrees.  The only exit seems to be clockwise.
+
+>[8] e
+
+R5
+A strange room -- an arc of about 45 degrees.  The only exit seems to be clockwise.
+
+>[9] ne
+
+R4
+A strange room -- an arc of about 45 degrees.  The only exit seems to be clockwise.
+
+>[10] n
+
+R3
+A strange room -- an arc of about 45 degrees.  The only exit seems to be clockwise.
+
+>[11] nw
+
+R2
+You're in what appears to be a circle of rooms but for reasons that aren't clear, you can't get back outside from here, and you are being forced clockwise.
+
+>[12] w
+
+R1
+The circle of rooms continues clockwise and it appears that you can go outside from here.
+
+>[13] outside
+
+R9
+The way back seems to have disappeared.  There seems to be a crawl leading up, but it isn't clear that you'll be able to return.
+
+>[14] up
+
+treasure room
+Good news!  You found the treasure!  :)
+
+Bad news!  There is no way out.  :(
+
+You can see a gold crown here.
+
+>

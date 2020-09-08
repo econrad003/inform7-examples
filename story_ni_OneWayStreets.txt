@@ -1,0 +1,86 @@
+"One-Way Streets" by Eric Conrad
+
+Include Exit Lister by Eric Eve.
+
+Chapter 1 Mapping Primitives
+
+	[
+		These work like 'above' and 'below' to permit creation of one-way connections.  (See Section 3.3 of Writing with Inform for documentation.)
+		Example 1 - How 'above' works with up and down
+			Foo is above Bar.					- creates a two-way link: Bar -up-> Foo -down-> Bar
+			Foo is a room above Bar.			- creates a one-way link: Bar -up-> Foo
+		Example 2
+			Foo is eastward from Bar.			- two-way: Bar -east-> Foo -west-> Bar
+			Foo is a room eastward from Bar.	- one-way: Bar -east-> Foo
+		Above and below are defined in the Standard Rules extension.  The definitions are:
+			The verb to be above means the reversed mapping up relation.
+			The verb to be below means the reversed mappind down relation
+		No corresponding tokens for the compass directions are found in the Standard Rules.
+	]
+
+Section 1.1 Eight Compass Primitives
+
+	[ defined anticlockwise from south... ]
+
+The verb to be southward from means the reversed mapping south relation.
+The verb to be southeastward from means the reversed mapping southeast relation.
+The verb to be eastward from means the reversed mapping east relation.
+The verb to be northeastward from means the reversed mapping northeast relation.
+The verb to be northward from means the reversed mapping north relation.
+The verb to be northwestward from means the reversed mapping northwest relation.
+The verb to be westward from means the reversed mapping west relation.
+The verb to be southwestward from means the reversed mapping southwest relation.
+
+Section 1.2 Miscellaneous
+
+	[ inward from, outward from ]
+The verb to be inward from means the reversed mapping inside relation.
+The verb to be outward from means the reversed mapping outside relation.
+
+Chapter 2 Proof of Concept
+
+A proof_room is a kind of room. 	[ we want to make sure this works with subclasses! ]
+
+The description of a proof_room is usually "A strange room -- an arc of about 45 degrees.  The only exit seems to be clockwise."
+
+Section 2.1 One-Way Connections
+
+	[ two random rooms - we'll start in R0, go around a ring and end in R9 ]
+
+R0 and R9 are proof_rooms.
+
+The description of R0 is "You're standing outside a strange and possibly magical round house.".
+
+The description of R9 is "The way back seems to have disappeared.  There seems to be a crawl leading up, but it isn't clear that you'll be able to return.".
+
+	[ A clockwise ring of rooms. ]
+
+R1, R2, R3, R4, R5, R6, R7, and R8 are proof_rooms.
+
+The description of R1 is "The circle of rooms continues clockwise and it appears that you can go outside from here.".
+
+The description of R2 is "You're in what appears to be a circle of rooms but for reasons that aren't clear, you can't get back outside from here, and you are being forced clockwise.".
+
+R1 is a room westward from R2.  R2 is a room northwestward from R3.  R3 is room northward from R4.  R4 is a room northeastward from R5.  R5 is a room eastward from R6.  R6 is a room southeastward from R7.  R7 is a room southward from R8.  R8 is a room southwestward from R1.
+
+The passkey is a thing in R7.
+
+	[inward from, outward from ]
+
+R9 is a room outward from R1.   R2 is a room inward from R0.
+
+Before going outside when the location is R1:
+	if the player is not carrying the passkey, say "A force field stops you from passing through.  A disembodied voice says 'You need the passkey.'" instead.
+
+Section 2.2 Endgame
+
+The treasure room is a room above R9.  The description is "Good news!  You found the treasure!  :)[paragraph break]Bad news!  There is no way out.  :(".  
+
+The gold crown is a thing in the treasure room.
+
+Chapter 3 Testing
+
+When play begins:
+	say "NOTE:  Exits are listed in the status line below the name of the noom.".
+
+Test me with "inside/ w/ outside/ sw/ s/ take passkey/ se/ e/ ne/ n/ nw/ w/ outside/ up"
