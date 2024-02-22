@@ -81,7 +81,7 @@ Example:  * The Right Way - using the extension.
 
 	test me with "copyright / license".
 
-Example: * The Wrong Way - forgetting to set the copyright holder and year
+Example: * The Wrong Way - forgetting to set the copyright holder and year.
 
 	*: "The wrong way to use the extension"
 
@@ -93,7 +93,7 @@ Example: * The Wrong Way - forgetting to set the copyright holder and year
 
 	test me with "copyright / license".
 
-Example:  ** Using a different license
+Example:  * Using a different license - example with BSD-1-clause license.
 
 	*: "Using a different license"
 
